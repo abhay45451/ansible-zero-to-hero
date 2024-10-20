@@ -5,7 +5,7 @@
 ### Using Public Key
 Make sure the public key is already generated and located in your ~/.ssh directory (typically named id_rsa.pub). If you haven’t created a key pair yet, you can do so with:
 
-ssh-keygen -t rsa -b 4096
+ssh-keygen -t rsa -b 4096   #on master node
 ```
 ssh-copy-id -f -o "IdentityFile=/mnt/Mumbai.pem" ubuntu@<INSTANCE-PUBLIC-IP>
 OR
@@ -18,7 +18,7 @@ ssh-copy-id -f -o "IdentityFile=/mnt/Mumbai.pem" ubuntu@13.233.115.168   #should
 - ubuntu@<INSTANCE-IP>: This is the username (ubuntu) and the IP address of the remote server you want to access.
 
 ### Using Password 
-
+  ssh-keygen -t rsa -b 4096  #on master node
 - Go to the file `/etc/ssh/sshd_config.d/60-cloudimg-settings.conf`
 - Update `PasswordAuthentication yes`
 - Restart SSH -> `sudo systemctl restart ssh`
